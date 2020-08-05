@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="Stopwatch.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="apple-touch-icon" sizes="53x48" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" type="image/png" href="favicon.png">
+
+	 <div class ="time">
+	  <h1>Stopwatch</h1>
+	</div>
+	<div class ="time">
+		<span id="second">0</span>:<span id="ms">0</span>
+	</div>
+	<div>
+		<button  type="button" onclick="runTime()" class="btns" highlight="red">Start/Stop</button>
+		<button  type="button" onclick="takeTime()" class="btns" >Total Time</button>
+		<button  type="button" onclick="resetTime()" class="btns" >Reset</button>
+	</div>
+	<div class ="time">
+		<p>Total Time</p>
+		<div id="list"></div>
+	</div>
+
+
+	<script src="Stopwatch.js"></script> 
+</html>
