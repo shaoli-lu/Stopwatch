@@ -16,3 +16,16 @@
 	padding: 5px;
 	margin: 5px;
 }
+
+
+@media(max-width:100px){
+	 .hidden-xs {
+		 display: none !important;
+	 }
+}
+
+@media(max-width:100px){
+	 .visible-xs {
+		 display: block !important;
+	 }
+}
