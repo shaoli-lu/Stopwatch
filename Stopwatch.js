@@ -20,7 +20,7 @@ function runTime(){
   if(count == 1){
   interval = setInterval(function(){
     ms++;
-    msElem.innerHTML = ms;
+    msElem.innerHTML = ms * 4;
     if(ms == 250){
       ms = 0;
       msElem.innerHTML = ms;
@@ -56,6 +56,6 @@ function resetTime(){
 function takeTime(){
   if(ms > 0 || second > 0){
     var list = document.getElementById("list");
-  list.innerHTML += `<p>${minute}:${second}:${ms}</p>`;  
+  list.innerHTML += `<p>${minute}:${second}:${ms * 4}</p>`;  
   }
 }
