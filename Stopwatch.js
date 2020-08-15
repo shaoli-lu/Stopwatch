@@ -1,8 +1,10 @@
 var count = 0;
 var ms = 0;
 var second = 0;
+var minute = 0;
 var msElem = document.getElementById("ms");
 var secondElem = document.getElementById("second");
+var minuteElem = document.getElementById("minute");
 var interval;
 
 window.addEventListener("keypress",function(event){
@@ -24,6 +26,12 @@ function runTime(){
       msElem.innerHTML = ms;
       second++;
       secondElem.innerHTML = second;
+	  if(second == 60){
+      second = 0;
+      secondElem.innerHTML = second;
+      minute++;
+      minuteElem.innerHTML = minute;
+    }
     }
   }, 1);  
   }
@@ -37,8 +45,10 @@ function runTime(){
 function resetTime(){
   ms = 0;
   second  = 0;
+  minute = 0;
   msElem.innerHTML = ms;
   secondElem.innerHTML = second;
+  minuteElem.innerHTML = minute;
   clearInterval(interval);
   document.getElementById("list").innerHTML = "";
 }
@@ -46,6 +56,6 @@ function resetTime(){
 function takeTime(){
   if(ms > 0 || second > 0){
     var list = document.getElementById("list");
-  list.innerHTML += `<p>${second}:${ms}</p>`;  
+  list.innerHTML += `<p>${minute}:${second}:${ms}</p>`;  
   }
 }

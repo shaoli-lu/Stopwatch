@@ -20,6 +20,12 @@
 }
 
 
+.save {
+	font-weight: 500;
+	font-size: 20px;
+	padding: 5px;
+	margin: 5px;
+}
 @media(max-width:640px){
 	 .hidden-xs {
 		 display: none !important;
