@@ -8,7 +8,12 @@
 <link rel="shortcut icon" type="image/png" href="favicon.png">
 <link rel="shortcut icon" type="image/png" href="favicon.png">
 
+<div class="visible-xs">
 <img src="Sand.gif" width="50%" class="time" alt="Stopwatch with laptime feature" title="Stopwatch with laptime feature" />
+</div>
+<div class="hidden-xs">
+<img src="Sand.gif" width="15%" class="time" alt="Stopwatch with laptime feature" title="Stopwatch with laptime feature" />
+</div>
 
 <div class ="time">
 	<span id ="minute">0</span>:<span id="second">0</span>:<span id="ms">0</span>
@@ -19,7 +24,7 @@
 	<button  type="button" onclick="resetTime()" class="btns" >Reset</button>
 </div>
 <div class ="save">
-	<p>Saved Lap Time(m:s:ms)</p>
+	<p>Saved Lap Time (m:s:ms)</p>
 	<div id="list"></div>
 </div>
 
