@@ -21,7 +21,7 @@ function runTime(){
   interval = setInterval(function(){
     ms++;
     msElem.innerHTML = ms;
-    if(ms == 100){
+    if(ms == 250){
       ms = 0;
       msElem.innerHTML = ms;
       second++;
