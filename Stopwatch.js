@@ -43,6 +43,7 @@ function runTime(){
 }
 
 function resetTime(){
+  count = 0;
   ms = 0;
   second  = 0;
   minute = 0;
