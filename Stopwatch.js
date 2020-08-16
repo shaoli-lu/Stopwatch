@@ -1,5 +1,7 @@
 var count = 0;
 var ms = 0;
+var ms1 = 0;
+var ms = 0;
 var second = 0;
 var minute = 0;
 var msElem = document.getElementById("ms");
