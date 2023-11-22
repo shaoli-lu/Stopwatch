@@ -18,23 +18,43 @@ window.addEventListener("keypress",function(event){
   }
 });
 
+var elapsedTime = 0;
+var startTime;
+
 function runTime() {
-  count++;
-  var startTime = Date.now();
-  if (count == 1) {
+  if (count == 0) {
+    startTime = Date.now();
     interval = setInterval(function() {
       var timeDiff = Date.now() - startTime;
-      ms = timeDiff % 1000;
-      second = Math.floor(timeDiff / 1000) % 60;
-      minute = Math.floor(timeDiff / 60000);
+      elapsedTime += timeDiff;
+      ms = elapsedTime % 1000;
+      second = Math.floor(elapsedTime / 1000) % 60;
+      minute = Math.floor(elapsedTime / 60000);
       msElem.innerHTML = ms;
       secondElem.innerHTML = second;
       minuteElem.innerHTML = minute;
+      startTime = Date.now();
     }, 10);
+    count++;
   } else {
-    count = 0;
+    var timeDiff = Date.now() - startTime;
+    elapsedTime += timeDiff;
     clearInterval(interval);
+    count = 0;
   }
+}
+
+function resetTime() {
+  elapsedTime = 0;
+  count = 0;
+  ms = 0;
+  second = 0;
+  minute = 0;
+  msElem.innerHTML = ms;
+  secondElem.innerHTML = second;
+  minuteElem.innerHTML = minute;
+  clearInterval(interval);
+  document.getElementById("list").innerHTML = "";
 }
 
 function resetTime(){
