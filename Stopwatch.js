@@ -57,23 +57,25 @@ function resetTime() {
   document.getElementById("list").innerHTML = "";
 }
 
-function resetTime(){
-  currentTime = 0;
-  startTime = 0;
-  count = 0;
-  ms = 0;
-  second  = 0;
-  minute = 0;
-  msElem.innerHTML = ms;
-  secondElem.innerHTML = second;
-  minuteElem.innerHTML = minute;
-  clearInterval(interval);
-  document.getElementById("list").innerHTML = "";
-}
 
 function takeTime(){
   if(ms > 0 || second > 0){
-    var list = document.getElementById("list");
-  list.innerHTML += `<p>${minute}:${second}:${ms}</p>`;  
+ // var date = new Date();
+  //var formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
+  //console.log(formattedDate); 
+var timestamp = Date.now();
+var date = new Date(timestamp);
+var hours = date.getHours();
+var ampm = hours >= 12 ? 'PM' : 'AM';
+hours = hours % 12;
+hours = hours ? hours : 12; // the hour '0' should be '12'
+hours = hours.toString().padStart(2, '0');
+var minutes = date.getMinutes().toString().padStart(2, '0');
+var seconds = date.getSeconds().toString().padStart(2, '0');
+var milliseconds = date.getMilliseconds().toString().padStart(3, '0');
+var formattedTime = `${hours}:${minutes}:${seconds}:${milliseconds} ${ampm}`;
+console.log(formattedTime);
+  var list = document.getElementById("list");
+  list.innerHTML += `<p>${minute}:${second}:${ms} - (${formattedTime})</p>`;  
   }
 }
