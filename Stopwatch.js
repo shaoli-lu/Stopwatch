@@ -9,6 +9,7 @@ var secondElem = document.getElementById("second");
 var minuteElem = document.getElementById("minute");
 var interval;
 
+
 window.addEventListener("keypress",function(event){
   switch(event.key.toLowerCase()){
     case 's': runTime();break;
@@ -17,34 +18,28 @@ window.addEventListener("keypress",function(event){
   }
 });
 
-function runTime(){
+function runTime() {
   count++;
-  if(count == 1){
-  interval = setInterval(function(){
-    ms++;
-    msElem.innerHTML = ms * 4;
-    if(ms == 250){
-      ms = 0;
+  var startTime = Date.now();
+  if (count == 1) {
+    interval = setInterval(function() {
+      var timeDiff = Date.now() - startTime;
+      ms = timeDiff % 1000;
+      second = Math.floor(timeDiff / 1000) % 60;
+      minute = Math.floor(timeDiff / 60000);
       msElem.innerHTML = ms;
-      second++;
       secondElem.innerHTML = second;
-	  if(second == 60){
-      second = 0;
-      secondElem.innerHTML = second;
-      minute++;
       minuteElem.innerHTML = minute;
-    }
-    }
-  }, 1);  
-  }
-  else{
+    }, 10);
+  } else {
     count = 0;
     clearInterval(interval);
-
   }
 }
 
 function resetTime(){
+  currentTime = 0;
+  startTime = 0;
   count = 0;
   ms = 0;
   second  = 0;
@@ -59,6 +54,6 @@ function resetTime(){
 function takeTime(){
   if(ms > 0 || second > 0){
     var list = document.getElementById("list");
-  list.innerHTML += `<p>${minute}:${second}:${ms * 4}</p>`;  
+  list.innerHTML += `<p>${minute}:${second}:${ms1}</p>`;  
   }
 }
