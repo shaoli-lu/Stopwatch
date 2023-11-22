@@ -54,6 +54,6 @@ function resetTime(){
 function takeTime(){
   if(ms > 0 || second > 0){
     var list = document.getElementById("list");
-  list.innerHTML += `<p>${minute}:${second}:${ms1}</p>`;  
+  list.innerHTML += `<p>${minute}:${second}:${ms}</p>`;  
   }
 }
